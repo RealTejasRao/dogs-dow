@@ -6,7 +6,7 @@ Production website for **https://dogsanddow.com**, built with Next.js App Router
 
 ## Run locally
 
-Requires Node.js 22.12+; Node 24 is used in CI.
+Requires Node.js 24; the runtime is pinned to the same major version in CI and Vercel.
 
 ```powershell
 npm ci
