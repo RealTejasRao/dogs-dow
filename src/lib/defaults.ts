@@ -2,7 +2,7 @@ import type { Person, Recruitment, Service, Settings } from './models';
 
 export const defaultPeople: Person[] = [
   { _id: 'tejas-yadav', name: 'Tejas Yadav', role: 'President', group: 'Leadership', leadership: true, order: 0, localImage: '/leadership/tejas.png' },
-  { _id: 'rohit-sharma', name: 'Rohit Sharma', role: 'Vice President', group: 'Leadership', leadership: true, order: 1, localImage: '/leadership/rohit_sharma.png' },
+  { _id: 'rohit-sharma', name: 'Rohit Sharma', role: 'Vice President', group: 'Leadership', leadership: true, order: 1, localImage: '/leadership/rohit_sharma2.png' },
   { _id: 'rohit-sah-teli', name: 'Rohit Sah Teli', role: 'Vice President', group: 'Leadership', leadership: true, order: 2, localImage: '/leadership/rohit_sah.png' },
 ];
 
