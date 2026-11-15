@@ -53,7 +53,7 @@ export function ContactForm({ email }: { email?: string }) {
     try {
       const response = await fetch(`https://formspree.io/f/${formId}`, { method: 'POST', body: data, headers: { Accept: 'application/json' }, signal: controller.signal });
       if (!response.ok) throw new Error('Submission rejected');
-      setStatus('success'); setMessage('Your enquiry has been received. Thank you for getting in touch.');
+      setStatus('success'); setMessage('A good conversation starts here. Thank you for getting in touch.');
       trackEvent('enquiry_success');
     } catch {
       setStatus('error'); setMessage('We couldn’t confirm your enquiry. Your details are still here. Please retry, or contact us by email.');
@@ -73,7 +73,7 @@ export function ContactForm({ email }: { email?: string }) {
       {error(name)}
     </fieldset>;
   }
-  if (status === 'success') return <div className="form-success" role="status"><span className="success-icon" aria-hidden="true"><svg className="success-orbit" viewBox="0 0 72 72"><circle cx="36" cy="36" r="33" pathLength="100" /></svg><Check className="success-check" /></span><h3>A good conversation<br />starts here.</h3><p>{message}</p></div>;
+  if (status === 'success') return <div className="form-success" role="status"><span className="success-icon" aria-hidden="true"><svg className="success-orbit" viewBox="0 0 72 72"><circle cx="36" cy="36" r="33" pathLength="100" /></svg><Check className="success-check" /></span><h3>Your enquiry has been received.</h3><p>{message}</p></div>;
   return <form className="contact-form" data-status={status} action={formId ? `https://formspree.io/f/${formId}` : undefined} method="post" onSubmit={submit} noValidate>
     <div className="form-grid">
       <label>Your name <span>*</span><input name="name" autoComplete="name" placeholder="Alex Sharma" required maxLength={100} {...field('name')} />{error('name')}</label>
