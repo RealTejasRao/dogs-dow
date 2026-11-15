@@ -18,9 +18,8 @@
   .scroll-reveal:not([data-revealed]) { transform: translate3d(0, 36px, 0); }
   [data-scroll-entered='true'] { animation: scroll-arrive 1.9s var(--calm-ease) both; }
   .scroll-reveal[data-revealed='true'].how-photo img { animation: photo-settle 2.8s var(--calm-ease) both; }
-  .scroll-reveal[data-revealed='true'] .path-panel img { animation: photo-settle 2.8s var(--calm-ease); }
-  /* Hover remains in charge of the image as soon as the visitor interacts. */
-  .scroll-reveal[data-revealed='true'] .path-panel:is(:hover, :focus-visible) img { animation: none; }
+  /* Path cards enter with their reveal wrapper. Keep their image transforms
+     transition-only so leaving hover cannot restart an entrance animation. */
 
   .how-steps li { position: relative; border-bottom: 0; }
   .how-step::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #24241f26; transform-origin: left; }
@@ -41,9 +40,6 @@
   :root .leadership-profile .person-title h3::after { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
   :root .expertise-card, :root .expertise-card-icon, :root .expertise-card-icon svg,
   :root .expertise-card-arrow { transition-duration: .9s; transition-timing-function: var(--calm-ease); }
-  :root .path-panels { transition-duration: 1.8s; transition-timing-function: var(--calm-ease); }
-  :root .path-panel img { transition-duration: 2.2s; transition-timing-function: var(--calm-ease); }
-  :root .path-panel h2, :root .path-shade, :root .path-arrow { transition-duration: 1.1s; transition-timing-function: var(--calm-ease); }
   :root .faq-item summary svg { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
   :root .faq-item::details-content { transition: block-size .95s var(--calm-ease), opacity .8s, content-visibility .95s allow-discrete; }
   :root .footer-nav a::after, :root .footer-nav svg { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
