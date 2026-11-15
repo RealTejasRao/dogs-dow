@@ -26,7 +26,7 @@ export function CloudinaryImage({ image, className = '', priority = false, aspec
 export function PersonTile({ person }: { person: Person }) {
   return <article className="person">
     {person.image ? <CloudinaryImage image={person.image} className="portrait" aspectRatio={4/5} /> : person.localImage ? <Image src={person.localImage} alt={person.name} className="portrait" width={600} height={750} sizes="(max-width: 760px) 80vw, 35vw" /> : <div className="portrait portrait-initials" aria-hidden="true">{person.name.split(' ').map(n => n[0]).slice(0, 2).join('')}</div>}
-    <div className="person-title"><h3>{person.name}</h3>{person.linkedin && <a href={person.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on LinkedIn (opens in new tab)`}><Arrow /></a>}</div>
+    <div className="person-title"><h3>{person.name}</h3>{person.linkedin && <a className="person-linkedin" href={person.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${person.name} on LinkedIn (opens in new tab)`}><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#0A66C2" /><path fill="#fff" d="M6.5 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM5.2 9.5h2.6V19H5.2V9.5Zm4.8 0h2.5v1.3h.04c.35-.67 1.2-1.58 2.66-1.58 2.84 0 3.37 1.87 3.37 4.3V19h-2.6v-4.86c0-1.16-.02-2.66-1.62-2.66-1.63 0-1.88 1.27-1.88 2.58V19H10V9.5Z" /></svg></a>}</div>
     <p>{person.role}</p>{person.institution && <p className="person-institution">{person.institution}</p>}
   </article>;
 }
