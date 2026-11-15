@@ -11,20 +11,11 @@
 .path-panel:is(:hover, :focus-visible) .path-arrow { background: #fff; color: #191b17; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .path-panels { transition: grid-template-columns 1s cubic-bezier(.22, 1, .36, 1); }
-  .path-panel img { transition: transform 1.35s cubic-bezier(.22, 1, .36, 1); }
-  .path-shade { transition: background .7s; }
-  .path-panel h2 { transition: transform .8s cubic-bezier(.22, 1, .36, 1), opacity .45s; }
-  .path-arrow { transition: background .35s, color .35s, transform .6s cubic-bezier(.22, 1, .36, 1), opacity .4s; }
-  .path-panel:is(:hover, :focus-visible) img { transform: scale(1.3) translateX(3%); }
-  .path-panel:is(:hover, :focus-visible) h2 { transform: translateX(12px); }
-  .path-panel:is(:hover, :focus-visible) .path-arrow { transform: translate(4px, -4px); }
-}
-@media (min-width: 761px) and (prefers-reduced-motion: no-preference) {
-  .path-panels:has(.path-panel:first-child:is(:hover, :focus-visible)) { grid-template-columns: minmax(0, 6fr) minmax(0, 1fr); }
-  .path-panels:has(.path-panel:last-child:is(:hover, :focus-visible)) { grid-template-columns: minmax(0, 1fr) minmax(0, 6fr); }
-  .path-panels:has(.path-panel:is(:hover, :focus-visible)) .path-panel:not(:hover):not(:focus-visible) h2,
-  .path-panels:has(.path-panel:is(:hover, :focus-visible)) .path-panel:not(:hover):not(:focus-visible) .path-arrow { opacity: 0; transform: translateX(24px); }
+  .path-panel img { transition: transform 1.3s cubic-bezier(.25, .46, .45, .94); }
+  .path-shade { transition: background .9s ease; }
+  .path-arrow { transition: background .7s ease, color .7s ease, transform .8s cubic-bezier(.25, .46, .45, .94); }
+  .path-panel:is(:hover, :focus-visible) img { transform: scale(1.04); }
+  .path-panel:is(:hover, :focus-visible) .path-arrow { transform: translate(2px, -2px); }
 }
 @media (max-width: 760px) {
   .pathways-inner { padding-top: 0; padding-bottom: 80px; }
