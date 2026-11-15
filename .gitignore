@@ -1,0 +1,20 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.vercel/
+.playwright-mcp/
+.tools/
+public/videos/*.encoding.mp4
+*.log
+# Original source and superseded video experiments stay local; ship the two active renditions.
+public/videos/vid*.mp4
+public/videos/hero.mp4
+public/videos/hero-background.webm
+public/videos/hero-day-background.mp4
+public/videos/hero-day-background.webm

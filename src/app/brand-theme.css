@@ -1,0 +1,69 @@
+/* Shared society palette. Keep small text dark for contrast on orange. */
+:root {
+  --brand-orange: #f0502b;
+  --brand-orange-ink: #a92f12;
+  --brand-orange-wash: #fff0eb;
+}
+
+::selection { background: var(--brand-orange); color: #191b17; }
+
+/* Dark lettering keeps the society's exact orange accessible on small CTAs. */
+.homepage .audience-link-company,
+:root main .button,
+:root .header .header-cta {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  color: #191b17;
+}
+.homepage .audience-link-company:hover,
+:root main .button:hover,
+:root .header .header-cta:hover {
+  background: #ff795a;
+  border-color: #ff795a;
+  color: #191b17;
+}
+.header .desktop-nav a::after { background: var(--brand-orange); }
+
+.homepage .value-icon,
+.homepage .expertise-card-icon {
+  background: var(--brand-orange);
+  color: var(--brand-orange-wash);
+}
+.homepage .how-number { color: var(--brand-orange-ink); }
+.homepage .leadership-profile .portrait { outline-color: var(--brand-orange); }
+.homepage .leadership-profile .person-title h3::after { background: var(--brand-orange); height: 2px; }
+
+.homepage .expertise-card:is(:hover, :focus-visible) { border-color: var(--brand-orange); }
+/* Keep the approved black icon hover, with an orange glyph. */
+.homepage .expertise-card:is(:hover, :focus-visible) .expertise-card-icon {
+  background: #191b17;
+  color: var(--brand-orange);
+}
+.homepage .expertise-card-arrow { color: var(--brand-orange-ink); }
+.homepage .path-arrow { background: var(--brand-orange); border-color: var(--brand-orange); color: #191b17; }
+.homepage .path-panel:is(:hover, :focus-visible) .path-arrow { background: #ff795a; border-color: #ff795a; color: #191b17; }
+
+.homepage .faq-callout aside { background: var(--brand-orange-wash); }
+.homepage .faq-item summary svg,
+.homepage .faq-item summary:hover svg { color: var(--brand-orange-ink); }
+.homepage .faq-item[open] { border-bottom-color: var(--brand-orange); }
+
+.footer-base { border-top: 3px solid var(--brand-orange); }
+.footer-nav a::after { background: var(--brand-orange); }
+.footer-nav a:hover svg { color: var(--brand-orange); }
+
+.company-contact .contact-page-kicker { color: var(--brand-orange-ink); }
+.company-contact .contact-student-note a,
+.company-contact .contact-page-email,
+.company-contact .privacy-check a,
+.privacy-page .privacy-content a {
+  color: var(--brand-orange-ink);
+  text-decoration-color: var(--brand-orange);
+}
+.company-contact .privacy-check input { accent-color: var(--brand-orange-ink); }
+.company-contact .form-success .success-icon { background: var(--brand-orange); color: #191b17; }
+
+.apply-announcement .countdown-number { color: var(--brand-orange); }
+.apply-announcement .countdown-date time { color: var(--brand-orange-ink); }
+.privacy-page .eyebrow { color: var(--brand-orange-ink); }
+.privacy-page .privacy-content li::marker { color: var(--brand-orange-ink); }

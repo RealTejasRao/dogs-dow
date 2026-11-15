@@ -1,0 +1,58 @@
+/* The cinematic hero has its own choreography and is deliberately excluded. */
+:root { --calm-ease: cubic-bezier(.22, .45, .2, 1); }
+
+@keyframes scroll-arrive {
+  from { transform: translate3d(0, 32px, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes photo-settle {
+  from { transform: scale(1.085); }
+  to { transform: scale(1); }
+}
+@keyframes rule-unfold {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal:not([data-revealed]) { transform: translate3d(0, 36px, 0); }
+  [data-scroll-entered='true'] { animation: scroll-arrive 1.9s var(--calm-ease) both; }
+  .scroll-reveal[data-revealed='true'].how-photo img { animation: photo-settle 2.8s var(--calm-ease) both; }
+  .scroll-reveal[data-revealed='true'] .path-panel img { animation: photo-settle 2.8s var(--calm-ease); }
+  /* Hover remains in charge of the image as soon as the visitor interacts. */
+  .scroll-reveal[data-revealed='true'] .path-panel:is(:hover, :focus-visible) img { animation: none; }
+
+  .how-steps li { position: relative; border-bottom: 0; }
+  .how-step::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #24241f26; transform-origin: left; }
+  .how-step[data-revealed='true']::after { animation: rule-unfold 2s .15s var(--calm-ease) both; }
+
+  .value-motion-ready.is-revealed::before { animation-duration: 2.8s; animation-timing-function: var(--calm-ease); }
+  .value-motion-ready.is-revealed .value-heading-text { animation-duration: 1.9s; animation-timing-function: var(--calm-ease); }
+  .value-point { --point-delay: .25s; }
+  .value-point:nth-child(2) { --point-delay: .5s; }
+  .value-point:nth-child(3) { --point-delay: .75s; }
+  .value-motion-ready .value-point.is-revealed::before { animation-duration: 2s; animation-timing-function: var(--calm-ease); }
+  .value-motion-ready .value-point.is-revealed .value-icon,
+  .value-motion-ready .value-point.is-revealed h3,
+  .value-motion-ready .value-point.is-revealed p { animation-duration: 1.8s; animation-timing-function: var(--calm-ease); }
+
+  :root .leadership-profile .portrait { transition-duration: 1.15s; transition-timing-function: var(--calm-ease); }
+  :root .leadership-profile .person-title h3,
+  :root .leadership-profile .person-title h3::after { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
+  :root .expertise-card, :root .expertise-card-icon, :root .expertise-card-icon svg,
+  :root .expertise-card-arrow { transition-duration: .9s; transition-timing-function: var(--calm-ease); }
+  :root .path-panels { transition-duration: 1.8s; transition-timing-function: var(--calm-ease); }
+  :root .path-panel img { transition-duration: 2.2s; transition-timing-function: var(--calm-ease); }
+  :root .path-panel h2, :root .path-shade, :root .path-arrow { transition-duration: 1.1s; transition-timing-function: var(--calm-ease); }
+  :root .faq-item summary svg { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
+  :root .faq-item::details-content { transition: block-size .95s var(--calm-ease), opacity .8s, content-visibility .95s allow-discrete; }
+  :root .footer-nav a::after, :root .footer-nav svg { transition-duration: .85s; transition-timing-function: var(--calm-ease); }
+  main .button, main .button svg, main .text-link svg { transition-duration: .7s; transition-timing-function: var(--calm-ease); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-entered], .scroll-reveal, .scroll-reveal img { animation: none !important; }
+  :root .leadership-profile .portrait, :root .leadership-profile .person-title h3,
+  :root .leadership-profile .person-title h3::after, :root .expertise-card,
+  :root .expertise-card-icon, :root .expertise-card svg, :root .faq-item summary svg { transition: none; }
+}
